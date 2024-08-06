@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">tracking_open_form.tracking_open_data_source</item>
+            <item name="deps" xsi:type="string">tracking_open_form.tracking_open_data_source</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Product Types</item>
+        <item name="config" xsi:type="array">
+            <item name="dataScope" xsi:type="string">data</item>
+            <item name="namespace" xsi:type="string">tracking_open_form</item>
+        </item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+    <settings>
+        <buttons>
+            <button name="back">
+                <url path="*/*/index"/>
+                <class>back</class>
+                <label translate="true">Back</label>
+            </button>
+            <button name="delete" class="Stagem\OrderMapTracking\Ui\Component\Control\Route\DeleteButton"/>
+            <button name="processing" class="Stagem\OrderMapTracking\Ui\Component\Control\Route\StatusProcessingButton"/>
+            <button name="complete" class="Stagem\OrderMapTracking\Ui\Component\Control\Route\StatusCompleteButton"/>
+        </buttons>
+    </settings>
+    <dataSource name="tracking_open_data_source" component="Magento_Ui/js/form/provider">
+        <settings>
+            <submitUrl path="*/*/complete"/>
+        </settings>
+        <dataProvider class="Stagem\OrderMapTracking\Ui\DataProvider\Route\OpenDataProvider" name="tracking_open_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>entity_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+</form>

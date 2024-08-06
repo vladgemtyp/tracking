@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<referenceBlock name="page.title">
+    <action method="setPageTitle">
+        <argument name="title" xsi:type="string">Order Map Tracking</argument>
+    </action>
+</referenceBlock>
+<body>
+    <referenceContainer name="content">
+        <block class="Stagem\OrderMapTracking\Block\RouteForm" template="Stagem_OrderMapTracking::route-form.phtml"/>
+        <uiComponent name="route_listing" />
+    </referenceContainer>
+</body>
+</page>

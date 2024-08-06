@@ -1,0 +1,45 @@
+<?php
+/**
+ * Template for displaying Stagem Charts
+ *
+ * @var $block \Stagem\OrderMapTracking\Block\RouteForm
+ */
+?>
+
+<div class="row">
+    <div class="col-md-8">
+        <form name="addData" method="post" id="addData" class="form" enctype="multipart/form-data"
+              action="<?php echo $this->getFormAction(); ?>"
+              data-hasrequired="<?= $block->escapeHtmlAttr(__('* Required Fields')) ?>"
+              data-mage-init='{"validation":{}}'>
+            <?= $block->getBlockHtml('formkey'); ?>
+            <fieldset class="fieldset">
+                <legend class="legend"><span><?= $block->escapeHtmlAttr(__('Upload route file?')) ?></span></legend>
+                <fieldset class="fieldset row">
+                    <div class="fields col-md-6">
+                        <div class="field name required">
+                            <label class="label" for="title"><span><?= $block->
+                                    escapeHtmlAttr(__('Name')) ?></span></label>
+                            <div class="control">
+                                <input name="file" id="file" title="File" class="input-file" type="file"
+                                       data-validate="{required:true}">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </fieldset>
+            <div class="actions-toolbar">
+                <div class="primary">
+                    <button type="submit" class="action submit primary" title="Save"><span><?= $block->
+                            escapeHtmlAttr(__('Save Route')) ?></span></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<style>
+    .action.submit {
+        margin-top: 10px;
+    }
+</style>

@@ -1,0 +1,23 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Instantiate interface -->
+    <preference for="Stagem\OrderMapTracking\Api\Data\RouteInterface" type="Stagem\OrderMapTracking\Model\Route"/>
+    <preference for="Stagem\OrderMapTracking\Api\RouteRepositoryInterface" type="Stagem\OrderMapTracking\Model\RouteRepository"/>
+    <preference for="Stagem\OrderMapTracking\Api\RouteSearchResultInterface" type="Stagem\OrderMapTracking\Model\RouteSearchResult"/>
+    <preference for="Stagem\OrderMapTracking\Api\PostManagementInterface" type="Stagem\OrderMapTracking\Model\PostManagement"/>
+
+    <!-- Logger -->
+    <type name="Stagem\OrderMapTracking\Logger\Handler">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+        </arguments>
+    </type>
+    <type name="Stagem\OrderMapTracking\Logger\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">OrderMapTrackingLogger</argument>
+            <argument name="handlers"  xsi:type="array">
+                <item name="system" xsi:type="object">Stagem\OrderMapTracking\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </type>
+</config>

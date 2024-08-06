@@ -1,0 +1,21 @@
+{
+  "name": "stagem/module-order-map-tracking",
+  "description": "Order Map Tracking",
+  "require": {
+    "magento/framework": "102.0.*|103.0.*",
+    "phpoffice/phpspreadsheet": "1.26.*"
+  },
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "license": [
+    "proprietary"
+  ],
+  "autoload": {
+    "files": [
+      "src/Statistic/registration.php"
+    ],
+    "psr-4": {
+      "Stagem\\Statistic\\": "src/Statistic"
+    }
+  }
+}
